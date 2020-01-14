@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>pokemon.html : 포켓몬스터 카드 도감</title>
+	<link rel="stylesheet" type="text/css" href="../common.css">
+	<style type="text/css">
+		.card {
+			border : 1px solid rgba(0, 0, 0, 0.3);   /*진한회색*/
+			width: 250px;
+			height: 300px;
+			background-color: white;
+			box-sizing: border-box;       /*가로사이즈를 고정하고싶을때*/
+			margin : 20px;                /*박스 바깥 여백*/
+			box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);   /*진한회색*/
+			padding: 7px;                /*박스 안쪽 여백*/
+			display: inline-block;       /*여백은 주고, 옆에 누가 오도록 인라인-블럭사용*/
+		}
+		{
+		.type_info{
+			text_align: right;
+		}
+		}
+		.type {
+			width: 50px;
+			height: 20px;
+			color: white;
+			font-size: 12px;
+			display: inline-block;
+			box-sizing: border-box;
+			text-align: center;
+			border-radius: 10px;
+		}
+		.grass{
+			background-color: #78C850;
+		}
+		.poison{
+			background-color: #A040A0;
+		}
+		.name_info{
+			font-weight: bold;
+			border-bottom: 1.5px solid rgba(0,0,0,0.2);
+			padding: 5px 0;
+		}
+		.poketmon{
+			margin: 0 auto;
+			display: block;
+		}
+		table, th, td{
+			border: 1px solid lightgray;
+		}
+		.detail_info{
+			margin-bottom: 5px;
+		}
+		table{
+			width: 225px;
+			margin: 0 auto;
+			background-color: #D4F4FA;
+			box-sizing: border-box;
+			border-collapse: collapse;
+		}
+		th{
+			text-align: left;
+			width: 60px;
+		}
+		td{
+			text-align: right;
+		}
+		.link_info{
+			border-top: 1px solid rgba(0,0,0,0.2);
+			text-align: right;
+			padding-top: 3px;
+		}
+		span.like_span{
+			background-image: url('../img/ic_favorite.png');
+			background-repeat: no-repeat;
+			line-height: 18px;
+			padding-left: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class = "card">
+		<div class="type_info">
+			<span class="type grass">풀</span>
+			<span class="type poison">독</span>
+		</div>
+ 		<div calss="name_info">
+ 			No.001 이상해씨
+ 		</div>
+ 		<div class="img_info">
+ 			<img src="../img/이상해씨.png" class="poketmon">
+ 		</div>
+ 		<div class="detail_info">
+ 			<table>
+ 				<tr>
+ 					<th>분류</thd>
+ 					<td>씨앗 포켓몬</td>
+ 				</tr>
+ 				<tr>
+ 					<th>키</th>
+ 					<td>0.7m</td>
+ 				</tr>
+ 				<tr>
+ 					<th>몸무게</th>
+ 					<td>6.9kg</td>
+ 				</tr>
+ 			</table>
+ 		</div>
+ 		<div class="link_info">
+ 			<span class="like_span">895</span>
+ 		</div>
+	</div>
+</body>
+</html>
