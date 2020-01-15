@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Gamja+Flower|Nanum+Gothic&display=swap');
+body { 
+	margin: 0; padding: 0; 
+	font-family: 'Nanum Gothic', sans-serif;
+	color : #282c37;
+}
+ul{
+	margin: 0; padding : 0;
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+	color : inherit;
+}
