@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/ea12a6ffb1.js" crossorigin="anonymous"></script>
 	<title>COMEBUY:와사</title>
 	<link rel="stylesheet" type="text/css" href="../../css/common.css">
 	<style type="text/css">
@@ -22,24 +23,154 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+
 		}
-		.header_content_logo{background-color: red;}
-		.header_content_search{background-color: blue;}
+		.header_content_logo{}
+		.header_content_search{}
+		.header_content_search_group{
+			display: flex;
+			align-items: center;
+			background-color: #f2f3f5;
+			border-radius: 2px;
+		}
+		.header_content_search_input{
+			background-color: transparent;
+			border-color: transparent;
+			height: 44px;
+			font-size: 13px;
+			border-radius: 2px;
+			padding: 10px 12px;
+			outline: none; /*input 태그 focus시 파랑테두리*/
+		}
+		.header_content_search_btn{
+			background-color: transparent;
+			border-color: transparent;
+			width: 44px;
+			height: 44px;
+			cursor: pointer;
+			color: #756ACD;
+			border-top-right-radius: 2px;
+			border-bottom-right-radius: 2px;
+		}
+		.header_content_search_btn:hover{
+			background-color: #4239AD;
+			color: white;
+		}
 		.header_content_nav{background-color: green;}
-		.header_content_member{background-color: yellow;}
+		.header_content_member{
+			/*flex로 로그인과 가입하기가 세로로 되어 있던 것을 가로로 바꾼다 */
+			/*width: 160px;*/
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: row; /*(default)생략 가능*/
+		}
+		.header_content_member > div{
+			padding: 10px 0px 10px 3px;
+		}
+		.header_content_member_mypage{
+			position: relative;
+		}
+		.header_content_member_first:hover .header_dropdown{
+			display: block;
+		}
+		.header_content_member_mypage > a{
+			display: inline-block;
+			padding: 12px 15px;
+			font-weight: 400;
+			border: 1px solid transparent;
+			border-radius: 2px;
+			height: 45px;
+			color: #506763;
+			line-height: 19px;
+		}
+		.header_content_member_first:hover > div > a,
+		.header_content_member_cart:hover > a{
+			background-color: rgba(20,23,28,.05);
+			border-color: rgba(20,23,28,.05);
+		}
+		.header_content_member_cart > a{
+			display: inline-block;
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+			color: #506763;
+			border: 1px solid transparent;
+			text-align: center;
+			padding: 12px;
+			line-height: 19px;
+		}
+		.header_content_logo_img{
+			max-width: 70px;
+			vertical-align: middle;
+		}
+		.header_content_logo_text{
+			font-size: 12px;
+			font-weight: bold;
+			vertical-align: bottom;
+		}
+		.header_dropdown_menu{
+			border-bottom-left-radius: 2px;
+			border-bottom-right-radius: 2px;
+			box-shadow: 0 4px 16px rgba(20,23,28,25);
+			background-color: white;
+			padding: 10px 0;
+		}
+		.header_dropdown_menu a{
+			display: inline-block;
+			font-size: 15px;
+			color: #505763;
+			text-align: center;
+			padding: 5px 15px;
+			font-weight: 400;
+			width: 130px;
+			position: relative;
+			z-index: 100;
+		}
+		.header_dropdown_menu a:hover{
+			color: #007791;
+			background-color: #f2f3f5;
+		}
+		.header_dropdown{
+			position: absolute;
+			top: 53px;
+			left: 0;
+			display: none;
+		}
+		.arrow{
+			position: absolute;
+			top: -4px;
+			left: 15px;
+			width: 15px;
+			height: 15px;
+			transform: rotate(45deg);
+			background-color: white;
+			border-color: transparent transparent #fff transparent
+			z-index: 99;
+		}
 	</style>
 </head>
 <body>
 	<header>
-		<!-- 페이지 이름 언더바 내용을 써야 나중에 겹쳐서 문제가 생기지 않음 -->
+		<!-- 페이지 이름 언더바 내용으로 써야 나중에 겹쳐서 문제가 생기지 않음 -->
 		<div class="header_wrap">
 			<div class="header_content">
 				<div class="header_content_logo">
-					<!-- 내 이미지 넣을 것 -->
-					<img src="">
-					<span>COMEBUY</span>
+					<a href="#">
+					<img class="header_content_logo_img" src="../../img/logo/logo.png" alt="로고 이미지">
+					<span class="header_content_logo_text">COMEBUY</span>
+					</a>
 				</div>
-				<div class="header_content_search">물음표</div>
+				<div class="header_content_search">
+				<form name="frm_search" action="" method="GET">
+					<div class="header_content_search_group">
+						<input type="text" placeholder="찾으시는 제품을 입력하세요" name="keword" class="header_content_search_input">
+						<button type="button" class="header_content_search_btn">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</form>
+				</div>
 				<div class="header_content_nav">
 					<a href="#">주방가전</a>
 					<a href="#">건강가전</a>
@@ -48,9 +179,26 @@
 					<a href="#">컴퓨터</a>
 					</div>
 				<div class="header_content_member">
-					<a href="#">로그인</a>
-					<a href="#">회원가입</a>
+					<div class="header_content_member_first">
+					<div class="header_content_member_mypage"><a href="#">마이 페이지</a>
+						<div class="header_dropdown">
+							<div class="arrow"></div>
+							<ul class="header_dropdown_menu">
+								<li><a href="#">주문내역조회</a></li>
+								<li><a href="#">장바구니</a></li>
+								<li><a href="#">회원정보수정</a></li>
+								<li><a href="#">고객센터</a></li>
+							</ul>
+						</div>
 					</div>
+					</div>
+					<div>
+						<div class="header_content_member_cart">
+							<a href="#"><i class="fas fa-shopping-cart"></i></a></div>
+					</div>
+					<div><button type="button" class="btn btn-basic">로그인</button></div>
+					<div><button type="button" class="btn btn-primary">가입하기</button></div>
+				</div>
 			</div>
 		</div>
 	</header>
