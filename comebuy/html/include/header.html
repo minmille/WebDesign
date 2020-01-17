@@ -18,8 +18,8 @@
 			margin: 0 auto;
 			height: 65px;
 			box-sizing: border-box;
-			border-left: 1px solid red;
-			border-right: 1px solid red;
+			/*border-left: 1px solid red;*/
+			/*border-right: 1px solid red;*/
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -56,7 +56,16 @@
 			background-color: #4239AD;
 			color: white;
 		}
-		.header_content_nav{background-color: green;}
+		.header_content_nav{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 240px;
+		}
+		.header_content_nav > div{
+			padding: 10px 0;
+
+		}
 		.header_content_member{
 			/*flex로 로그인과 가입하기가 세로로 되어 있던 것을 가로로 바꾼다 */
 			/*width: 160px;*/
@@ -68,13 +77,13 @@
 		.header_content_member > div{
 			padding: 10px 0px 10px 3px;
 		}
-		.header_content_member_mypage{
+		.header_content_dropdown_group{
 			position: relative;
 		}
-		.header_content_member_first:hover .header_dropdown{
+		.header_content_dropdown_wrap:hover .header_dropdown{
 			display: block;
 		}
-		.header_content_member_mypage > a{
+		.header_content_dropdown_group > a{
 			display: inline-block;
 			padding: 12px 15px;
 			font-weight: 400;
@@ -84,7 +93,7 @@
 			color: #506763;
 			line-height: 19px;
 		}
-		.header_content_member_first:hover > div > a,
+		.header_content_dropdown_wrap:hover > div > a,
 		.header_content_member_cart:hover > a{
 			background-color: rgba(20,23,28,.05);
 			border-color: rgba(20,23,28,.05);
@@ -148,6 +157,7 @@
 			border-color: transparent transparent #fff transparent
 			z-index: 99;
 		}
+
 	</style>
 </head>
 <body>
@@ -172,15 +182,55 @@
 				</form>
 				</div>
 				<div class="header_content_nav">
-					<a href="#">주방가전</a>
-					<a href="#">건강가전</a>
-					<a href="#">공기청정기</a>
-					<a href="#">김치냉장고</a>
-					<a href="#">컴퓨터</a>
+					 
+					<div class="header_content_dropdown_wrap">	
+					<div class="header_content_dropdown_group"><a href="#" class="magicline"><i class="fas fa-tv"></i> 생활가전</a>
+						<div class="header_dropdown">
+								<div class="arrow"></div>
+								<ul class="header_dropdown_menu">
+									<li><a href="#">TV</a></li>
+									<li><a href="#">냉장고</a></li>
+									<li><a href="#">세탁기</a></li>
+									<li><a href="#">건조기</a></li>
+									<li><a href="#">에어컨</a></li>
+									<li><a href="#">선풍기</a></li>
+								</ul>
+							</div>
 					</div>
+					</div>
+										 
+					<div class="header_content_dropdown_wrap">
+					<div class="header_content_dropdown_group"><a href="#" class="magicline">건강가전</a>
+						<div class="header_dropdown">
+								<div class="arrow"></div>
+								<ul class="header_dropdown_menu">
+									<li><a href="#">공기청정기</a></li>
+									<li><a href="#">안마의자</a></li>
+									<li><a href="#">스포츠용품</a></li>
+								</ul>
+							</div>
+					</div>
+					</div>
+				 				 
+					 <div class="header_content_dropdown_wrap">
+					 	<div class="header_content_dropdown_group"><a href="#" class="magicline">I T</a>
+							<div class="header_dropdown">
+								<div class="arrow"></div>
+								<ul class="header_dropdown_menu">
+									<li><a href="#">스마트폰</a></li>
+									<li><a href="#">태블릿PC</a></li>
+									<li><a href="#">노트북</a></li>
+									<li><a href="#">Brand PC</a></li>
+									<li><a href="#">조립 PC</a></li>
+								</ul>
+							</div>
+					 	</div>
+					 </div>
+				</div>
 				<div class="header_content_member">
-					<div class="header_content_member_first">
-					<div class="header_content_member_mypage"><a href="#">마이 페이지</a>
+					<div class="header_content_dropdown_wrap">
+					<div class="header_content_dropdown_group">
+						<a href="#">마이 페이지</a>
 						<div class="header_dropdown">
 							<div class="arrow"></div>
 							<ul class="header_dropdown_menu">

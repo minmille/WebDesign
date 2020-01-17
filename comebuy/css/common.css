@@ -64,3 +64,15 @@
 			background-color: #4239AD;
 			border-color: transparent;
 		}
+		/*Text에 밑줄 치는 CSS 효과*/
+		.magicline:after{
+			content: '';
+			display: block;
+			width: 0;
+			height: 2.5px;
+			background-color: #506763;
+			transition: width .3s;
+		}
+		.magicline:hover:after{
+			width: 100%;
+		}
