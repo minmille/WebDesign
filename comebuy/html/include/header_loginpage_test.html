@@ -176,53 +176,88 @@
 			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 			border-radius: 2px;
 			overflow: hidden;
+		}
+		div.div_input {
+			background-color: green;
+			border: 1px solid red;
+			width: 90%;
+			height: 50px;
+			margin-bottom: 14px;
+			padding: 10px 10px 10px 10px;
+
+		}
+		span.input_box{
+			display: block;
+			overflow: hidden;
+
+		}
+		input.input_login{
+			border-width: 0px;
+			width: 408px;
+			padding: 7px 0px 6px 0px;
+		}
+		.input_box_wrap{
+			display: flex;
+			justify-content: center;
 		
+		}
 	</style>
 </head>
 <body>
 	<!-- af전시몰 로그인 디자인 참조 -->
 	<div class="modal_wrap">
 		<div class="modal_content">
-			<div class="login_box">
-				<ul>
-					<li>
-						<span class="input_box">
-						<input type="text" placeholder="아이디">
-						</span>
-					</li>
-					<li>
-						<span class="input_box">
-						<input type="text" placeholder="비밀번호">
-						</span>
-					</li>
-					<li>
-						<a href="#">로그인</a>
-					</li>
-					<li>
-						<a href="#">회원가입</a>
-					</li>
-				</ul>
-				<div class="find_service">
-					<div class="find_id">
-						<a href="#">아이디찾기</a>
-					</div>
-					<div class="find_pw">
-						<a href="#">비밀번호찾기</a>
-					</div>
-					<div class="not_member_search">
-						<a href="#">비회원 주문 조회</a>
-					</div>
-				</div>
-				<div class="other_service">
-					<div class="naver_login"></div>
-					<div class="kakao_login"></div>
-					<div class="facebook_login"></div>
-				</div>
+			<div class="input_box_wrap">
+			<div class="div_input" id="comebuy_id">
+				<span class="input_box">
+					<input type="text" placeholder="아이디" class="input_login" id="inputid">
+				</span>
+			</div>
+			<div class="div_input" id="comebuy_pw">
+				<span class="input_box">
+					<input type="password" placeholder="비밀번호" class="input_login" id="inputpw">	
+				</span>
+			</div>
+			</div>
+			<div>
+				<a id="btn_login" href="#">로그인</a>
+			</div>
+			<div>
+				<a id="btn_login" href="#">회원가입</a>
+			</div>
+			
+			
+			*********
+			<div>
+				<table>
+					<tr>
+						<td id="state">
+							<input type="checkbox" id="loginch">
+							<label for="loginch" class="label">&nbsp;로그인 상태 유지
+							</label>
+						</td>
+						<td id="secure">
+							<span id="ip_ud"><a gref="#">IP보안</a></span>
+							<span id="off">OFF</span>&nbsp;
+							<span class="si"> | </span>&nbsp;
+							<span id="login_ud"><a href="#">일회용 로그인</a></span>&nbsp;
+							<img src="../img/naver/help.png">
+						</td>
+					</tr>
+				</table>
+			</div>
+			**********
+
+			<div><hr></div>
+			<div id="member">
+				<a href="#">아이디 찾기</a> &nbsp;<span class="si"> | </span>&nbsp;
+				<a href="#">비밀번호 찾기</a> &nbsp;<span class="si"> | </span>&nbsp;
+				<a href="#">비회원주문확인</a>
 			</div>
 		</div>
 	</div>
 
-
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 	<header>
 		<!-- 페이지 이름 언더바 내용으로 써야 나중에 겹쳐서 문제가 생기지 않음 -->
